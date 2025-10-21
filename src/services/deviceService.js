@@ -6,7 +6,11 @@ export default {
         return Device.create(formData);
     },
 
-        getAll() {
+    getAll() {
         return Device.find();
+    },
+
+    getOne(deviceId) {
+        return Device.findById(deviceId);
     },
 }

@@ -123,8 +123,8 @@
   - [x] Add newController rout
   - [x] Add newController create rout,refactor post form, add newService
   - [x] Add New collection page
-  - [ ] Add New collection rout, service and dynamic data
-  - [ ] add New details page, details rout and service
+  - [x] Add New collection rout, service and dynamic data
+  - [x] add New details page, details rout and service
   - [ ] add like New rout and service
   - [ ] add is owner middleware
   - [ ] add New edit logic

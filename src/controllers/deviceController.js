@@ -27,4 +27,18 @@ deviceController.get('/catalog', async (req, res) => {
     res.render('devices/catalog', { devices });
 })
 
+deviceController.get('/:deviceId/details', async (req, res) => {
+    const deviceId = req.params.deviceId;
+    const userId = req.user?.id;
+        try {
+            const device = await deviceService.getOne(deviceId);
+            const isCreator = device.owner.equals(userId);
+            const isPrefered = device.preferredList.some(u => u.equals(req.user?.id));
+            res.render('devices/details', { device, isCreator, isPrefered });
+        } catch (err) {
+            const errorMessage = getErrorMessage(err);
+            res.status(400).render('404', { error: errorMessage });
+        }
+})
+
 export default deviceController;
