@@ -121,7 +121,7 @@
   - [x] create New model
   - [x] Add create New page
   - [x] Add newController rout
-  - [ ] Add newController create rout,refactor post form, add newService
+  - [x] Add newController create rout,refactor post form, add newService
   - [ ] Add New collection page
   - [ ] Add New collection rout, service and dynamic data
   - [ ] add New details page, details rout and service
