@@ -101,16 +101,16 @@
  - [x] Install dependecies `npm i`
  - [x] replace css 
  - [x] add html files to views folder
- - [ ] rename database
- - [ ] replace main layout
-   - [ ] title
-   - [ ] navigation
-   - [ ] body
-   - [ ] error notification
- - [ ] replace home page
- - [ ] modify navigation links
- - [ ] replace login page
- - [ ] replace register page
+ - [x] rename database
+ - [x] replace main layout
+   - [x] title
+   - [x] navigation
+   - [x] body
+   - [x] error notification
+ - [x] replace home page
+ - [x] modify navigation links
+ - [x] replace login page
+ - [x] replace register page
  - [ ] modify user model
  - [ ] modify login and register actions (change username to email)
  - [ ] modify user service (if needed)
