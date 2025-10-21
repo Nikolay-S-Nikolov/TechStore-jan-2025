@@ -5,6 +5,7 @@ export async function generateAuthToken(user) {
     const sign = util.promisify(jwt.sign);
     const payload = {
         id: user.id,
+        name: user.name,
         email: user.email,
     };
 
@@ -18,7 +19,7 @@ export async function generateAuthToken(user) {
 
 export async function decodeToken(token) {
     const verify = util.promisify(jwt.verify);
-    
+
     const decodedToken = await verify(
         token,
         process.env.JWT_SECRET,

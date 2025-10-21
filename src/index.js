@@ -1,5 +1,5 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import routes from './routes.js';
 import handlebars from 'express-handlebars';
 import pageHelper from './helpers/pageHelper.js';
@@ -8,8 +8,6 @@ import cookieParser from 'cookie-parser';
 import authMiddleware from './middlewares/authMiddleware.js';
 // import { TempData } from './middlewares/tempDataMiddleware.js';
 // import session from 'express-session';
-
-dotenv.config()
 
 const app = express();
 const PORT = process.env.PORT; //TODO add port
