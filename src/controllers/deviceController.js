@@ -21,4 +21,10 @@ deviceController.post('/create', isAuth, async (req, res) => {
     }
 })
 
+
+deviceController.get('/catalog', async (req, res) => {
+    const devices = await deviceService.getAll();
+    res.render('devices/catalog', { devices });
+})
+
 export default deviceController;
