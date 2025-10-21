@@ -115,7 +115,7 @@
  - [-] modify login and register actions (change username to email)
  - [-] modify user service (if needed)
  - [x] modify token generation
- - [ ] relace 404 page
+ - [x] relace 404 page
 
  ## Exam steps
   - [ ] create New model
