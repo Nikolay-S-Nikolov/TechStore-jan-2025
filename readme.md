@@ -122,7 +122,7 @@
   - [x] Add create New page
   - [x] Add newController rout
   - [x] Add newController create rout,refactor post form, add newService
-  - [ ] Add New collection page
+  - [x] Add New collection page
   - [ ] Add New collection rout, service and dynamic data
   - [ ] add New details page, details rout and service
   - [ ] add like New rout and service
