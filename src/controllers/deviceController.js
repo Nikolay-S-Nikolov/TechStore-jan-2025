@@ -78,4 +78,15 @@ deviceController.post('/:deviceId/edit', isAuth, isOwner, async (req, res) => {
     }
 })
 
+deviceController.get('/:deviceId/delete', isAuth, isOwner, async (req, res) => {
+    const deviceId = req.params.deviceId;
+    try {
+        await deviceService.delete(deviceId);
+        res.redirect('/devices/catalog');
+    } catch (err) {
+        const errorMessage = getErrorMessage(err);
+        res.status(400).render('404', { error: errorMessage });
+    }
+})
+
 export default deviceController;

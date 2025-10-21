@@ -38,4 +38,8 @@ export default {
         const updatedDevice = Device.findByIdAndUpdate(deviceId, formData, opt);
         return updatedDevice;
     },
+
+    delete(deviceId) {
+        return Device.findByIdAndDelete(deviceId);
+    },
 }

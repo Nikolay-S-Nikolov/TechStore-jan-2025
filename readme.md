@@ -128,7 +128,7 @@
   - [x] add like device rout and service
   - [x] add is owner middleware
   - [x] add Device edit logic
-  - [ ] add device delete logic
+  - [x] add device delete logic
   - [ ] add Bonus logic
 
 Bonuses
