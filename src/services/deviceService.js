@@ -13,4 +13,23 @@ export default {
     getOne(deviceId) {
         return Device.findById(deviceId);
     },
+
+    async prefer(userId, deviceId) {
+        const device = await Device.findById(deviceId);
+        if (!device) {
+            throw new Error('No such device');
+        }
+
+        if (device.owner.equals(userId)) {
+            throw new Error('Creators can not prefer their device');
+        }
+
+        if (device.preferredList.some(id => id.equals(userId))) {
+            throw new Error('You have already prefer this device');
+        }
+
+        device.preferredList.push(userId);
+        await device.save();
+        return device;
+    },
 }

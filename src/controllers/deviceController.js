@@ -41,4 +41,16 @@ deviceController.get('/:deviceId/details', async (req, res) => {
         }
 })
 
+deviceController.get('/:deviceId/prefer', isAuth, async (req, res) => {
+    const deviceId = req.params.deviceId;
+    const userId = req.user.id;
+    try {
+        await deviceService.prefer(userId, deviceId);
+        res.redirect(`/devices/${deviceId}/details`);
+    } catch (err) {
+        const errorMessage = getErrorMessage(err);
+        res.status(400).render('404', { error: errorMessage });
+    }
+})
+
 export default deviceController;
