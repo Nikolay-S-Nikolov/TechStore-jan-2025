@@ -2,6 +2,7 @@ import { Router } from "express";
 import { isAuth } from "../middlewares/authMiddleware.js";
 import { getErrorMessage } from "../utils/errorUtils.js";
 import deviceService from "../services/deviceService.js";
+import { isOwner } from "../middlewares/deviceMiddleware.js";
 
 const deviceController = Router();
 
@@ -50,6 +51,30 @@ deviceController.get('/:deviceId/prefer', isAuth, async (req, res) => {
     } catch (err) {
         const errorMessage = getErrorMessage(err);
         res.status(400).render('404', { error: errorMessage });
+    }
+})
+
+deviceController.get('/:deviceId/edit', isAuth, isOwner, async (req, res) => {
+    const deviceId = req.params.deviceId;
+    try {
+        const device = await deviceService.getOne(deviceId);
+        res.render('devices/edit', { device });
+    } catch (err) {
+        const errorMessage = getErrorMessage(err);
+        res.status(400).render('404', { error: errorMessage });
+    }
+})
+
+
+deviceController.post('/:deviceId/edit', isAuth, isOwner, async (req, res) => {
+    const deviceId = req.params.deviceId;
+    const formData = req.body;
+    try {
+        await deviceService.edit(deviceId, formData);
+        res.redirect(`/devices/${deviceId}/details`);
+    } catch (err) {
+        const errorMessage = getErrorMessage(err);
+        res.status(400).render('devices/edit', { error: errorMessage, device: formData });
     }
 })
 

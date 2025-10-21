@@ -118,17 +118,17 @@
  - [x] relace 404 page
 
  ## Exam steps
-  - [x] create New model
-  - [x] Add create New page
-  - [x] Add newController rout
-  - [x] Add newController create rout,refactor post form, add newService
-  - [x] Add New collection page
-  - [x] Add New collection rout, service and dynamic data
-  - [x] add New details page, details rout and service
-  - [x] add like New rout and service
+  - [x] create device model
+  - [x] Add create device page
+  - [x] Add deviceController rout
+  - [x] Add deviceController create rout,refactor post form, add deviceService
+  - [x] Add device collection page
+  - [x] Add device collection rout, service and dynamic data
+  - [x] add device details page, details rout and service
+  - [x] add like device rout and service
   - [x] add is owner middleware
-  - [ ] add New edit logic
-  - [ ] add New delete logic
+  - [x] add Device edit logic
+  - [ ] add device delete logic
   - [ ] add Bonus logic
 
 Bonuses

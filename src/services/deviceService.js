@@ -32,4 +32,10 @@ export default {
         await device.save();
         return device;
     },
+
+    edit(deviceId, formData) {
+        const opt = { runValidators: true }
+        const updatedDevice = Device.findByIdAndUpdate(deviceId, formData, opt);
+        return updatedDevice;
+    },
 }
