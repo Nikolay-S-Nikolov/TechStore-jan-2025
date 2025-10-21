@@ -129,6 +129,7 @@
   - [x] add is owner middleware
   - [x] add Device edit logic
   - [x] add device delete logic
+  - [x] add about page
   - [ ] add Bonus logic
 
 Bonuses
