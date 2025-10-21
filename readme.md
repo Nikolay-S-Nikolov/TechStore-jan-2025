@@ -118,7 +118,7 @@
  - [x] relace 404 page
 
  ## Exam steps
-  - [ ] create New model
+  - [x] create New model
   - [ ] Add create New page
   - [ ] Add newController rout
   - [ ] Add newController create rout,refactor post form, add newService
