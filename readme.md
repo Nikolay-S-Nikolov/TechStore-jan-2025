@@ -119,7 +119,7 @@
 
  ## Exam steps
   - [x] create New model
-  - [ ] Add create New page
+  - [x] Add create New page
   - [ ] Add newController rout
   - [ ] Add newController create rout,refactor post form, add newService
   - [ ] Add New collection page
