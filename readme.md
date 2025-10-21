@@ -98,9 +98,9 @@
  - [ ] Add type declaration for promisified jsonwebtoken
 
 ## Steps to use the skeleton project
- - [ ] Install dependecies `npm i`
- - [ ] replace css 
- - [ ] add html files to views folder
+ - [x] Install dependecies `npm i`
+ - [x] replace css 
+ - [x] add html files to views folder
  - [ ] rename database
  - [ ] replace main layout
    - [ ] title
