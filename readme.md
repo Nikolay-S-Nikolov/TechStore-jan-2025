@@ -130,6 +130,7 @@
   - [x] add Device edit logic
   - [x] add device delete logic
   - [x] add about page
+  - [x] add home page dynamic content
   - [ ] add Bonus logic
 
 Bonuses

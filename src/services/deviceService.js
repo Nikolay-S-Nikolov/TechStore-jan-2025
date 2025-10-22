@@ -42,4 +42,8 @@ export default {
     delete(deviceId) {
         return Device.findByIdAndDelete(deviceId);
     },
+
+    getLastTree(){
+        return Device.find().sort('-_id').limit(3);
+    },
 }
