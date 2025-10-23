@@ -6,8 +6,18 @@ export default {
         return Device.create(formData);
     },
 
-    getAll() {
-        return Device.find();
+    getAll(filter = {}) {
+        let query = {};
+
+        if (filter.owner) {
+            query.owner = filter.owner;
+        }
+        
+        if (filter.preferredList) {
+            query.preferredList = filter.preferredList;
+        }
+
+        return Device.find(query);
     },
 
     getOne(deviceId) {
@@ -43,7 +53,7 @@ export default {
         return Device.findByIdAndDelete(deviceId);
     },
 
-    getLastTree(){
+    getLastTree() {
         return Device.find().sort('-_id').limit(3);
     },
 }

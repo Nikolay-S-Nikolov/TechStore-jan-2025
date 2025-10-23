@@ -1,5 +1,6 @@
 import { Router } from "express";
 import authService from "../services/authService.js";
+import deviceService from '../services/deviceService.js'
 import { getErrorMessage } from '../utils/errorUtils.js'
 import { isAuth, isGuest } from '../middlewares/authMiddleware.js'
 
@@ -46,5 +47,18 @@ authController.get('/logout', isAuth, (req, res) => {
     res.clearCookie(process.env.AUTH_COOKIE_NAME);
     res.redirect('/');
 });
+
+authController.get('/profile', isAuth, async (req, res) => {
+    const userId = req.user.id;
+
+    try {
+        const createdDevices = await deviceService.getAll({ owner: userId });
+        const preferredDevices = await deviceService.getAll({ preferredList: userId });
+        res.render('auth/profile', { createdDevices, preferredDevices });
+    } catch (err) {
+        const errorMessage = getErrorMessage(err);
+        res.status(400).render('404', { error: errorMessage });
+    }
+})
 
 export default authController;
